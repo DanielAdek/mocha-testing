@@ -1,5 +1,8 @@
 const expect = require('chai').expect;
-const app = require('../app');
+const should = require('chai').should();
+const assert = require('chai').assert;
+const App = require('../app');
+const app = new App();
 
 describe('Algorithms', () => {
     describe('Testiing for object creation', () => {
@@ -18,15 +21,18 @@ describe('Algorithms', () => {
     });
     describe('Sum of even numbers between 1 - 10', () => {
         it('should return the sum of even numbers equals 30', (done) => {
-            expect(app.evenNumber).to.be.a('number');
-            expect(app.evenNumber).to.be.eql(30);
+            // expect(app.evenNumber).to.be.a('number');
+            assert.equal(app.evenNumber(), 30);
+            assert.typeOf(app.evenNumber(), 'number');
+
+            // app.evenNumber().should.to.be.eql(30);
             done();
         });
     });
     describe('Sum of odd numbers between 1 - 10', () => {
         it('should return a sum of odd numbers', (done) => {
-            expect(app.oddNumber).to.be.a('number');
-            expect(app.oddNumber).to.eql(25);
+            expect(app.oddNumber()).to.be.a('number');
+            expect(app.oddNumber()).to.eql(25);
             done();
         });
     });

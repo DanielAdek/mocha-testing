@@ -1,12 +1,21 @@
-class Algorithm {
-    evenNumber(){
-        let result = 0;
-        for (let i = 0; i <= 10; i +=1) {
-            if (i % 2 === 0) {
-                result += i;
-            }
+function even() {
+    let result = 0;
+    for (let i = 0; i <= 10; i++) {
+        if (i % 2 === 0) {
+            result += i;
         }
-        return result;
+    }
+    return result;
+};
+const Algorithm = {
+    evenNumber: even,
+
+    oddNumber: function() {
+        let sum = 0;
+        for (let i = 0; i <= 10; i = i + 2) {
+            sum += i;
+        }
+        return sum;
     }
 }
 

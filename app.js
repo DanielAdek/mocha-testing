@@ -9,3 +9,5 @@ class Algorithm {
         return result;
     }
 }
+
+module.exports = Algorithm;
